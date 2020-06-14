@@ -12,21 +12,21 @@ function personalityTestHandler() {
   const sleepsEnough = confirm("Do you sleep enough?");
 
   // before moving on ... type check!
-  if (typeof likesPuppies !== "Boolean") {
+  if (typeof likesPuppies !== "boolean") {
     throw new TypeError();
   }
-  if (typeof eatsVegetables !== "Boolean") {
+  if (typeof eatsVegetables !== "boolean") {
     throw new TypeError();
   }
-  if (typeof sleepsEnough !== "Boolean") {
+  if (typeof sleepsEnough !== "boolean") {
     throw new TypeError();
   }
 
   // perform core logic
   const isHealthy = eatsVegetables && sleepsEnough;
-  const isAGoodPerson = likesPuppies && isHeathy;
+  const isAGoodPerson = likesPuppies || isHealthy;
   const adjective = isAGoodPerson ? "good" : "bad";
-  const message = `You are a ``${adjective}`` person`;
+  const message = `You are a ${adjective} person`;
 
   // alert result for the user
   alert(message);
